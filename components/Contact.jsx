@@ -36,7 +36,7 @@ export default function Contact() {
                         <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                             <div>
                                 <label htmlFor="company" className="block text-sm font-medium text-slate-300 mb-1">Company Name</label>
-                                <input type="text" id="company" value={recruiterName} onChange={(e) => setRecruiterName(e.target.value)} className="w-full px-4 py-3 rounded-lg bg-slate-950/50 border border-white/10 focus:bg-slate-950 focus:border-purple-500 focus:ring-2 focus:ring-purple-900/50 outline-none transition-all text-white placeholder-slate-600" placeholder="e.g. Acme Corp" />
+                                <input type="text" id="company" value={recruiterName} onChange={(e) => setRecruiterName(e.target.value)} className="w-full px-4 py-3 rounded-lg bg-slate-950/50 border border-white/10 focus:bg-slate-950 focus:border-purple-500 focus:ring-2 focus:ring-purple-900/50 outline-none transition-all text-white placeholder-slate-600" placeholder="e.g. Apple lantivi" />
                             </div>
                             <div>
                                 <div className="flex justify-between items-center mb-1">
@@ -46,7 +46,7 @@ export default function Contact() {
                                         Draft Message
                                     </button>
                                 </div>
-                                <textarea id="message" rows="5" value={contactMessage} onChange={(e) => setContactMessage(e.target.value)} className="w-full px-4 py-3 rounded-lg bg-slate-950/50 border border-white/10 focus:bg-slate-950 focus:border-purple-500 focus:ring-2 focus:ring-purple-900/50 outline-none transition-all resize-none text-white placeholder-slate-600" placeholder="Hi Sarah, I'd love to discuss a role at..."></textarea>
+                                <textarea id="message" rows="5" value={contactMessage} onChange={(e) => setContactMessage(e.target.value)} className="w-full px-4 py-3 rounded-lg bg-slate-950/50 border border-white/10 focus:bg-slate-950 focus:border-purple-500 focus:ring-2 focus:ring-purple-900/50 outline-none transition-all resize-none text-white placeholder-slate-600" placeholder="Hi Aishh, I'd love to discuss a role at..."></textarea>
                             </div>
                             <button type="submit" className="w-full py-3.5 rounded-lg bg-purple-600 text-white font-medium hover:bg-purple-500 transition-all shadow-lg hover:shadow-purple-900/50 hover:-translate-y-0.5">
                                 Send Message
