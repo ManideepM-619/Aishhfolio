@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 2, 6, 23;
+    /* slate-950 */
+    --background-end-rgb: 30, 27, 75;
+    /* indigo-950 */
+
+    /* Cat paw cursor - open */
+    --cursor-paw-open: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='20' rx='8' ry='7' fill='%23c084fc'/%3E%3Cellipse cx='8' cy='10' rx='4' ry='5' fill='%23c084fc'/%3E%3Cellipse cx='16' cy='7' rx='4' ry='5' fill='%23c084fc'/%3E%3Cellipse cx='24' cy='10' rx='4' ry='5' fill='%23c084fc'/%3E%3Cellipse cx='16' cy='20' rx='5' ry='4' fill='%23e9d5ff'/%3E%3Ccircle cx='9' cy='10' r='2' fill='%23e9d5ff'/%3E%3Ccircle cx='16' cy='7' r='2' fill='%23e9d5ff'/%3E%3Ccircle cx='23' cy='10' r='2' fill='%23e9d5ff'/%3E%3C/svg%3E") 16 16, auto;
+
+    /* Cat paw cursor - closed/grabbing */
+    --cursor-paw-closed: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='18' rx='9' ry='8' fill='%23a855f7'/%3E%3Cellipse cx='9' cy='12' rx='3.5' ry='4' fill='%23a855f7' transform='rotate(-15 9 12)'/%3E%3Cellipse cx='16' cy='9' rx='3.5' ry='4' fill='%23a855f7'/%3E%3Cellipse cx='23' cy='12' rx='3.5' ry='4' fill='%23a855f7' transform='rotate(15 23 12)'/%3E%3Cellipse cx='16' cy='18' rx='5' ry='4' fill='%23d8b4fe'/%3E%3Ccircle cx='10' cy='12' r='1.5' fill='%23d8b4fe'/%3E%3Ccircle cx='16' cy='9' r='1.5' fill='%23d8b4fe'/%3E%3Ccircle cx='22' cy='12' r='1.5' fill='%23d8b4fe'/%3E%3C/svg%3E") 16 16, auto;
+}
+
+/* Custom paw cursor */
+*,
+*::before,
+*::after {
+    cursor: var(--cursor-paw-open);
+}
+
+/* Closed paw on click */
+*:active {
+    cursor: var(--cursor-paw-closed);
+}
+
+/* Pointer elements should also use paw */
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+.cursor-pointer {
+    cursor: var(--cursor-paw-open);
+}
+
+a:active,
+button:active,
+[role="button"]:active,
+input[type="submit"]:active,
+input[type="button"]:active,
+.cursor-pointer:active {
+    cursor: var(--cursor-paw-closed);
+}
+
+body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(to bottom right,
+            rgb(var(--background-start-rgb)),
+            rgb(var(--background-end-rgb)));
+    min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4c1d95;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6d28d9;
+}
