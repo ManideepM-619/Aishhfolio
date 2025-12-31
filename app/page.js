@@ -7,8 +7,10 @@ import {
     Skills,
     Experience,
     Projects,
+    Education,
     Certifications,
     Achievements,
+    Publication,
     About,
     Contact,
     ChatWidget,
@@ -28,6 +30,8 @@ export default function Home() {
             <Projects />
             <Certifications />
             <Achievements />
+            <Publication />
+            <Education />
             <About />
             <Contact />
             {/* <ChatWidget /> */}

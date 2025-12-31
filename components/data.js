@@ -1,64 +1,160 @@
 // Shared data and utilities for the portfolio
-import { Shield, Server, Trophy, Award, Star } from 'lucide-react';
+import { Shield, Server, Trophy, Award, Star, BookOpen, Users } from 'lucide-react';
 
 export const portfolioData = {
-    name: "Sarah.Dev",
-    role: "Identity & Access Management Professional",
-    summary: "Experienced IAM professional seeking Software Engineering roles. Specializing in ForgeRock and PingFederate.",
+    name: "Aishwarya Madapati",
+    role: "IAM & Cybersecurity Professional",
+    summary: "Hands-on experience in Software Development and Cybersecurity, with expertise in IAM, PAM, MFA, SSO, and securing APIs. Proficient in ForgeRock, PingFederate, and OAuth 2.0 protocols.",
+
+    experience: [
+        {
+            role: "Information Technology Intern",
+            company: "Illinois Department of Human Services | Chicago, IL",
+            period: "June 2025 - July 2025",
+            highlights: [
+                "Managed Electronic Health Records (EHR) ensuring HIPAA compliance",
+                "Supported health data audits and quality checks for state/federal standards",
+                "Collaborated with IT security teams for secure handling of sensitive patient data",
+                "Contributed to cybersecurity protocols for medical record retention per NIST guidelines"
+            ]
+        },
+        {
+            role: "Programmer Analyst Trainee",
+            company: "Cognizant Technology Services | Hyderabad, India",
+            period: "Oct 2023 - Mar 2024",
+            highlights: [
+                "Integrated OIDC with applications to enable Single Sign-On (SSO)",
+                "Integrated Ping Federate with Active Directory, LDAP, and OAuth",
+                "Configured Okta with Salesforce, Office 365, and Active Directory",
+                "Managed application access, policies, and password rotation in Ping and AD"
+            ]
+        }
+    ],
+
     projects: [
         {
             id: 1,
-            title: "Pet Paw: Local Pet Marketplace",
-            category: "Full Stack Development",
-            summary: "A website that helps users find nearby pet owners available to buy, sell, or adopt pets.",
+            title: "QR-Phish Guard + Voice Coach",
+            category: "AI & Cybersecurity",
+            summary: "AI-driven QR-code security application that detects, scores, and explains phishing risks in real time.",
             details: {
-                problem: "Pet owners often struggle to find reliable, verified local buyers or sellers, leading to trust issues and scams.",
-                approach: "Built a location-based marketplace using React and a Python (Django) backend. Integrated Google Maps API for geolocation filtering and a secure messaging system for user privacy.",
-                stack: ["React", "Python (Django)", "PostgreSQL", "Google Maps API", "Docker"],
-                impact: "Facilitated over 500 successful pet connections in the local community during the beta launch."
+                problem: "QR-based phishing attacks are increasing, and users often lack awareness to identify malicious QR codes.",
+                approach: "Integrated Runware Vision to decode QR images with a custom risk-analysis engine. Added ElevenLabs Voice Coach for spoken feedback. Validates URLs against trusted domains, flags IP-literals, punycode, shorteners, and risky TLDs.",
+                stack: ["Bolt.new", "Runware", "ElevenLabs", "Next.js", "Node.js", "Python"],
+                impact: "Strengthened cybersecurity awareness by merging AI Vision + Voice AI to help users recognize and avoid QR-based phishing attacks."
             }
         },
         {
             id: 2,
-            title: "Automated Identity Lifecycle Management",
-            category: "Automation & Python",
-            summary: "Developed Python scripts to synchronize HR data with PingFederate, replacing manual entry.",
+            title: "Techstore – E-commerce Web Application",
+            category: "Full Stack Development",
+            summary: "Dynamic e-commerce React project with responsive design and efficient state management.",
             details: {
-                problem: "Manual provisioning took up to 3 days.",
-                approach: "Built a Python service using Flask consuming Workday webhooks and PingFederate Admin API.",
-                stack: ["Python", "Flask", "PingFederate API", "Docker", "Jenkins"],
-                impact: "Reduced provisioning time to <5 minutes."
+                problem: "Need for a modern, responsive e-commerce platform with seamless navigation.",
+                approach: "Built with React using Context API for state management. Implemented React Router DOM for navigation and React Hook Form for form handling.",
+                stack: ["React", "HTML", "CSS", "Bootstrap", "Context API", "React Router DOM"],
+                impact: "Delivered a fully functional e-commerce experience with enhanced user navigation and robust form validation."
             }
         },
         {
             id: 3,
-            title: "Secure Banking API Gateway",
-            category: "Security Engineering",
-            summary: "Assisted in implementing fine-grained authorization policies using OPA and PingAccess.",
+            title: "Image Caption Generator",
+            category: "Machine Learning",
+            summary: "CNN-LSTM based model to generate descriptive captions for input images using Flickr_8K dataset.",
             details: {
-                problem: "Client needed granular control over data access attributes.",
-                approach: "Deployed PingAccess integrated with OPA (Open Policy Agent) for complex authorization rules.",
-                stack: ["PingAccess", "Open Policy Agent", "Rego", "OAuth 2.0"],
-                impact: "Enabled secure launch of Open Banking platform."
+                problem: "Automating image captioning for accessibility and content management applications.",
+                approach: "Developed using Convolutional Neural Network (CNN) for feature extraction and Long Short-Term Memory (LSTM) for sequence generation. Trained on Flickr_8K dataset.",
+                stack: ["Python", "TensorFlow", "CNN", "LSTM", "Flickr_8K Dataset"],
+                impact: "Successfully generated accurate descriptive captions for diverse image inputs."
+            }
+        },
+        {
+            id: 4,
+            title: "Image Fusion of CT and MRI",
+            category: "Medical Imaging",
+            summary: "Medical image fusion model using Dual Tree Complex Wavelet Transform (DTCWT).",
+            details: {
+                problem: "Combining complementary information from CT and MRI scans for better diagnostic imaging.",
+                approach: "Implemented Dual Tree Complex Wavelet Transform (DTCWT) to extract intricate information from both CT and MRI images. Evaluated using RMSE metrics.",
+                stack: ["Python", "DTCWT", "Image Processing", "NumPy"],
+                impact: "Achieved improved fusion performance with low root mean square error (RMSE)."
             }
         }
     ],
-    experience: [
-        { role: "IAM Systems Analyst", company: "TechFin Global Solutions", period: "2021 - Present" },
-        { role: "Application Support Engineer", company: "DataShield Systems", period: "2018 - 2021" },
-        { role: "Junior IT Administrator", company: "StartUp Inc", period: "2016 - 2018" }
-    ],
+
     certifications: [
-        { name: "ForgeRock Certified Access Management Specialist", issuer: "ForgeRock", date: "2023", iconType: "shield-orange" },
-        { name: "PingIdentity Certified Professional - PingFederate", issuer: "PingIdentity", date: "2022", iconType: "shield-red" },
-        { name: "AWS Certified Solutions Architect – Associate", issuer: "Amazon Web Services", date: "2021", iconType: "server" }
+        { name: "Career Essentials in Cyber Security", issuer: "Microsoft & LinkedIn", date: "2024", iconType: "shield-blue" },
+        { name: "Generative AI APIs for Practical Applications", issuer: "Skillsoft", date: "2024", iconType: "server" },
+        { name: "Artificial Intelligence Training", issuer: "Oracle Academy", date: "2023", iconType: "server" },
+        { name: "SQL Fluency", issuer: "Udacity", date: "2023", iconType: "server" },
+        { name: "Introduction to Python Course", issuer: "NPTEL", date: "2022", iconType: "shield-orange" },
+        { name: "Programming, Data Structures and Algorithms", issuer: "NPTEL", date: "2022", iconType: "shield-orange" },
+        { name: "Microsoft Azure", issuer: "Udacity", date: "2022", iconType: "shield-blue" },
+        { name: "Machine Learning Session", issuer: "Cognizance IIT Roorkee", date: "2021", iconType: "server" }
     ],
+
     achievements: [
-        { title: "Winner - Global Cyber Security Hackathon", org: "DevPost x Security Alliance", date: "2023", desc: "Built a zero-trust authentication prototype using Python and OPA. Beat 50+ teams.", iconType: "trophy" },
-        { title: "Best Technical Talk", org: "PyCon Regional", date: "2022", desc: "Voted best session for presentation on 'Automating Legacy IAM with Modern Python Wrappers'.", iconType: "award" },
-        { title: "Innovation Champion", org: "TechFin Global Solutions", date: "2021", desc: "Awarded for developing an internal Python tool that reduced user onboarding time by 80%.", iconType: "star" }
+        {
+            title: "3rd Place - Data Analytics Cup",
+            org: "University of Illinois Springfield",
+            date: "April 2025",
+            desc: "Analyzed R&D spending, advertising efficiency, and customer satisfaction using linear regression and correlation analysis. Developed a customer satisfaction index (CSI) model.",
+            iconType: "trophy"
+        },
+        {
+            title: "Target Cyber Defense Challenge",
+            org: "Women in Cybersecurity",
+            date: "June 2025",
+            desc: "Executed red team and blue team exercises. Performed vulnerability scanning with Nessus and Wireshark. Demonstrated security monitoring and risk assessment under pressure.",
+            iconType: "award"
+        },
+        {
+            title: "IEEE CIS Chapter Chair",
+            org: "IEEE GRIET CIS SBC",
+            date: "May 2021 - May 2023",
+            desc: "Led IEEE Computational Intelligence Society student chapter. Organized technical talks, workshops, and networking events for student learning and collaboration.",
+            iconType: "star"
+        },
+        {
+            title: "WiCyS Membership",
+            org: "Women in Cybersecurity",
+            date: "May 2025 - Present",
+            desc: "Actively engaged in professional development, networking, and technical workshops to advance cybersecurity knowledge and leadership.",
+            iconType: "users"
+        }
     ],
-    skills: ["ForgeRock AM/IDM", "PingFederate", "Python", "OAuth 2.0", "OIDC", "SAML", "Docker", "AWS", "Java"]
+
+    education: [
+        {
+            degree: "Master of Science, Computer Science",
+            institution: "University of Illinois at Springfield",
+            location: "Springfield, IL",
+            period: "Aug 2024 - Dec 2025 (Expected)",
+            type: "graduate"
+        },
+        {
+            degree: "Graduate Certificate in System Security",
+            institution: "University of Illinois at Springfield",
+            location: "Springfield, IL",
+            period: "Aug 2024 - Present",
+            type: "certificate"
+        },
+        {
+            degree: "Bachelor of Technology, Information Technology",
+            institution: "Gokaraju Rangaraju Institute of Engineering & Technology",
+            location: "Hyderabad, India",
+            period: "March 2019 - August 2023",
+            type: "undergraduate"
+        }
+    ],
+
+    publication: {
+        title: "Air Quality Index Prediction",
+        link: "https://ui.adsabs.harvard.edu/link_gateway/2023E3SWC.39101103A/doi:10.1051/e3sconf/202339101103",
+        description: "Compared Support Vector Machine (SVM) and Random Forest models to predict AQI based on air pollutants (SO2, NO2, PM10, PM2.5, CO). Evaluated model performance using error metrics."
+    },
+
+    skills: ["Python", "JavaScript", "Java", "TypeScript", "ReactJS", "Node.js", "OAuth 2.0", "OIDC", "SAML", "PingFederate", "Okta", "ForgeRock", "AWS", "Docker"]
 };
 
 export const navigation = [
@@ -67,6 +163,8 @@ export const navigation = [
     { name: 'Projects', href: '#projects' },
     { name: 'Certifications', href: '#certifications' },
     { name: 'Achievements', href: '#achievements' },
+    { name: 'Publication', href: '#publication' },
+    { name: 'Education', href: '#education' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
 ];
