@@ -6,6 +6,16 @@ import { navigation } from './data';
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('');
+    const [titleIndex, setTitleIndex] = useState(0);
+    const titles = ['Aishwarya', 'Portfolio'];
+
+    // Title transition effect
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setTitleIndex((prev) => (prev + 1) % titles.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, []);
 
     // Scroll spy effect
     useEffect(() => {
@@ -51,6 +61,55 @@ export default function Navbar() {
                     50% { transform: translateY(-10px) rotate(0deg); }
                     75% { transform: translateY(-6px) rotate(8deg); }
                 }
+                @keyframes glitch {
+                    0%, 100% { 
+                        transform: translate(0); 
+                        text-shadow: none;
+                    }
+                    10% { 
+                        transform: translate(-2px, 1px); 
+                        text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff;
+                    }
+                    20% { 
+                        transform: translate(2px, -1px); 
+                        text-shadow: -2px 0 #ff00ff, 2px 0 #00ffff;
+                    }
+                    30% { 
+                        transform: translate(0); 
+                        text-shadow: none;
+                    }
+                    40% { 
+                        transform: translate(1px, 2px) skewX(-2deg); 
+                        text-shadow: 3px 0 #ff00ff, -3px 0 #00ffff;
+                    }
+                    50% { 
+                        transform: translate(-1px, -1px) skewX(1deg); 
+                        text-shadow: -1px 0 #ff00ff, 1px 0 #00ffff;
+                    }
+                    60% { 
+                        transform: translate(0); 
+                        text-shadow: none;
+                    }
+                    70% { 
+                        transform: translate(2px, 1px); 
+                        text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff;
+                        clip-path: inset(40% 0 30% 0);
+                    }
+                    80% { 
+                        transform: translate(-2px, -2px); 
+                        text-shadow: -2px 0 #ff00ff, 2px 0 #00ffff;
+                        clip-path: inset(10% 0 60% 0);
+                    }
+                    90% { 
+                        transform: translate(0); 
+                        text-shadow: none;
+                        clip-path: none;
+                    }
+                }
+                .glitch-text {
+                    position: relative;
+                    animation: glitch 0.8s ease-in-out forwards;
+                }
             `}</style>
 
             <nav className="fixed w-full z-50 bg-slate-950/70 backdrop-blur-md border-b border-white/5 transition-all duration-300">
@@ -58,7 +117,16 @@ export default function Navbar() {
                     <div className="flex justify-between items-center h-20">
                         <div className="flex-shrink-0 flex items-center gap-2">
                             <Shield className="text-purple-400" size={24} />
-                            <span className="text-xl font-semibold tracking-tight text-white">Aishwarya</span>
+                            <span
+                                key={titleIndex}
+                                className="glitch-text text-xl font-bold tracking-tight text-transparent bg-clip-text"
+                                style={{
+                                    backgroundImage: 'linear-gradient(90deg, #c084fc, #f472b6, #c084fc)',
+                                    backgroundSize: '100% auto'
+                                }}
+                            >
+                                {titles[titleIndex]}
+                            </span>
                         </div>
 
                         <div className="hidden lg:flex space-x-6">
@@ -70,8 +138,8 @@ export default function Navbar() {
                                         key={item.name}
                                         href={item.href}
                                         className={`text-xs font-medium uppercase tracking-wider transition-colors duration-200 relative flex flex-col items-center pt-6 ${isActive
-                                                ? 'text-purple-400'
-                                                : 'text-slate-400 hover:text-purple-400'
+                                            ? 'text-purple-400'
+                                            : 'text-slate-400 hover:text-purple-400'
                                             }`}
                                     >
                                         {/* Jumping Kitten */}
@@ -109,8 +177,8 @@ export default function Navbar() {
                                         href={item.href}
                                         onClick={() => setIsMenuOpen(false)}
                                         className={`flex items-center gap-2 px-3 py-2 text-base font-medium rounded-md transition-colors ${isActive
-                                                ? 'text-purple-400 bg-purple-500/10'
-                                                : 'text-slate-300 hover:text-purple-400 hover:bg-white/5'
+                                            ? 'text-purple-400 bg-purple-500/10'
+                                            : 'text-slate-300 hover:text-purple-400 hover:bg-white/5'
                                             }`}
                                     >
                                         {isActive && (
