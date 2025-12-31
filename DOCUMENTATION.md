@@ -366,4 +366,4 @@ MS Computer Science @ UIS | IAM & Cybersecurity Specialist
 
 ---
 
-*Last Updated: December 2024*
+*Last Updated: December 2025*
