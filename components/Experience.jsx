@@ -1,9 +1,16 @@
 'use client';
-import { Briefcase, CheckCircle2 } from 'lucide-react';
+import { useState } from 'react';
+import { Briefcase, CheckCircle2, ChevronDown } from 'lucide-react';
 import FadeIn from './FadeIn';
 import { portfolioData } from './data';
 
 export default function Experience() {
+    const [expandedIdx, setExpandedIdx] = useState(null);
+
+    const toggleExpand = (idx) => {
+        setExpandedIdx(expandedIdx === idx ? null : idx);
+    };
+
     return (
         <section id="experience" className="py-20 relative overflow-hidden">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -17,9 +24,21 @@ export default function Experience() {
                             <div className="relative pl-8 md:pl-12">
                                 <div className="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-purple-500 border-4 border-slate-950 shadow-lg shadow-purple-900/50"></div>
 
-                                <div className="p-6 rounded-xl bg-slate-900/40 backdrop-blur-md border border-white/5 hover:bg-slate-800/40 hover:border-purple-500/20 transition-all duration-300 group">
+                                <div
+                                    className="p-6 rounded-xl bg-slate-900/40 backdrop-blur-md border border-white/5 hover:bg-slate-800/40 hover:border-purple-500/20 transition-all duration-300 group cursor-pointer md:cursor-default"
+                                    onClick={() => toggleExpand(idx)}
+                                >
                                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
-                                        <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">{job.role}</h3>
+                                        <div className="flex items-center gap-2">
+                                            <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">{job.role}</h3>
+                                            {/* Mobile expand indicator */}
+                                            {job.highlights && (
+                                                <ChevronDown
+                                                    size={20}
+                                                    className={`text-purple-400 md:hidden transition-transform duration-300 ${expandedIdx === idx ? 'rotate-180' : ''}`}
+                                                />
+                                            )}
+                                        </div>
                                         <span className="text-sm font-medium text-purple-300 bg-purple-500/10 px-3 py-1 rounded-full w-fit mt-2 sm:mt-0 border border-purple-500/20">
                                             {job.period}
                                         </span>
@@ -30,7 +49,7 @@ export default function Experience() {
                                     </h4>
 
                                     {job.highlights && (
-                                        <ul className="space-y-2 mt-4">
+                                        <ul className={`space-y-2 mt-4 overflow-hidden transition-all duration-300 md:block ${expandedIdx === idx ? 'block' : 'hidden'}`}>
                                             {job.highlights.map((highlight, hIdx) => (
                                                 <li key={hIdx} className="flex items-start gap-2 text-sm text-slate-400">
                                                     <CheckCircle2 size={14} className="text-green-500 mt-0.5 flex-shrink-0" />
