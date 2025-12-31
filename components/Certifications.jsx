@@ -89,7 +89,7 @@ export default function Certifications() {
                             <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/20 to-pink-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-50"></div>
                             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-purple-900/20 aspect-[3/4]">
                                 <img
-                                    src="/assets/data-kitten.png"
+                                    src="/assets/data-kitten.webp"
                                     alt="Learning & Growth"
                                     className="w-full h-full object-cover"
                                 />

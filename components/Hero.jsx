@@ -35,13 +35,13 @@ export default function Hero() {
                                 Passionate about building secure, scalable software solutions and protecting digital identities.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <div className="flex flex-row gap-4 justify-center lg:justify-start">
                                 <a href="#projects" className="px-8 py-3.5 rounded-lg bg-purple-600 text-white font-medium hover:bg-purple-500 transition-all shadow-lg shadow-purple-900/30">
-                                    View Portfolio
+                                    Projects
                                 </a>
                                 <a href="/assets/Aishwarya_Madapati_resume.pdf" download className="px-8 py-3.5 rounded-lg bg-white/5 text-slate-200 border border-white/10 font-medium hover:bg-white/10 transition-all flex items-center justify-center gap-2 backdrop-blur-sm">
                                     <Download size={18} />
-                                    Download Resume
+                                    Resume
                                 </a>
                             </div>
                         </FadeIn>
@@ -52,12 +52,12 @@ export default function Hero() {
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-purple-900/20 aspect-[4/5] max-w-md mx-auto ring-4 ring-white/5 bg-slate-900">
                                 <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/40 to-transparent z-10 mix-blend-overlay"></div>
                                 <img
-                                    src="/assets/kitty.png"
+                                    src="/assets/fancy.webp"
                                     alt="Aishwarya Madapati"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
-                            <div className="absolute -bottom-6 -left-6 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl shadow-xl border border-white/10 z-20 hidden sm:block">
+                            <div className="absolute -bottom-6 -left-6 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl shadow-xl border border-white/10 z-20">
                                 <div className="flex items-center gap-3">
                                     <div className="p-2 bg-green-500/10 rounded-lg">
                                         <Shield className="text-green-400" size={20} />
